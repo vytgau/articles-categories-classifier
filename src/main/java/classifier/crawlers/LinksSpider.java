@@ -11,7 +11,7 @@ import java.util.List;
 public class LinksSpider {
 
     private final int CONNECTION_TIMEOUT = 60_000;  // miliseconds
-    private final int MAX_PAGES = 2; // max number of pages to crawl
+    private final int MAX_PAGES = 50; // max number of pages to crawl
 
     private List<String> links = new ArrayList<>();
     private String fromDate;

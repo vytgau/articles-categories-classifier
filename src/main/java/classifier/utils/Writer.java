@@ -1,5 +1,6 @@
 package classifier.utils;
 
+import classifier.LexemProbabilities;
 import classifier.crawlers.Channels;
 
 import java.io.BufferedWriter;
@@ -21,6 +22,16 @@ public class Writer {
                 writer.write(content.get(i));
             }
         }
+    }
+
+    public static void writeProbabilities(List<LexemProbabilities> lexemProbabilities) {
+        Path path = Paths.get("probabilities.txt");
+        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+            for (LexemProbabilities lexProb : lexemProbabilities) {
+                writer.write(lexProb.toString());
+                writer.newLine();
+            }
+        } catch (Exception e) {}
     }
 
 }
